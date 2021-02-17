@@ -1,0 +1,23 @@
+.secondary-menu {
+  order: 4;
+  width: 200px;
+
+  @media #{$break-normal}, #{$break-wide} {
+    align-self: center;
+  }
+  @media #{$break-narrow}, #{$break-normal-narrow} {
+    order: 0;
+    margin-bottom: 1rem;
+  }
+
+  &-list {
+    display: flex;
+    justify-content: space-between;
+    .option {
+      cursor: pointer;
+    }
+  }
+  .active {
+    color: $clr4;
+  }
+}

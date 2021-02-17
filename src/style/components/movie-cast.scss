@@ -1,0 +1,43 @@
+@media #{$break-normal}, #{$break-wide} {
+}
+
+@media #{$break-narrow}, #{$break-normal-narrow} {
+}
+
+.cast {
+  order: 3;
+  display: flex;
+  align-self: stretch;
+  overflow-x: auto;
+  overflow-y: hidden;
+  
+  @media #{$break-normal}, #{$break-wide} {
+    margin-top: 200px;
+  }
+  
+  @media #{$break-narrow}, #{$break-normal-narrow} {
+    // overflow-x: auto;
+  }
+
+  .actor {
+    text-align: center;
+    width: 70px;
+
+
+    &:not(:last-of-type) {
+      margin-right: 2rem;
+    }
+
+    &-img {
+      border-radius: 7px;
+      object-fit: cover;
+      width: 45px;
+      // background: rgba(255, 255, 255, 0.877);
+      height: auto;
+    }
+    &-name{
+      // white-space: initial;
+      // word-break: ;
+    }
+  }
+}

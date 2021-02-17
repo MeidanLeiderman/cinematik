@@ -1,0 +1,108 @@
+.overview {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  order: 1;
+  @media #{$break-normal}, #{$break-wide} {
+    width: 40%;
+    margin-top: 2.5em;
+  }
+
+  @media #{$break-narrow}, #{$break-normal-narrow} {
+    width: 100%;
+    margin-bottom: -1rem;
+  }
+
+  >*  {
+    margin-bottom: 1rem;
+  }
+
+  .genre-list {
+    display: flex;
+    flex-flow: row wrap;
+    @media #{$break-narrow}, #{$break-normal-narrow} {
+      order:4;
+    }
+
+    .genre {
+      white-space: pre-wrap;
+      @media #{$break-normal}, #{$break-wide} {
+        font-size: 0.9em;
+      }
+
+      @media #{$break-narrow}, #{$break-normal-narrow} {
+        color: $clr3;
+      }
+
+      &:not(:last-of-type) {
+        &:after {
+          content: " | ";
+        }
+      }
+    }
+  }
+
+  .box {
+    display: flex;
+    width: 100%;
+    @media #{$break-normal}, #{$break-wide} {
+      align-items: baseline;
+      // justify-content: center;
+    }
+    @media #{$break-narrow}, #{$break-normal-narrow} {
+      align-items: baseline;
+
+      order:1;
+    }
+
+    .title {
+      max-width: 70%;
+      @media #{$break-normal}, #{$break-wide} {
+        margin-right: 1em;
+        font-size: 1.5rem;
+      }
+      @media #{$break-narrow}, #{$break-normal-narrow} {
+        margin-right: 0.5em;
+        font-weight: 500;
+        font-size: 1.3em;
+      }
+    }
+    .rating{
+      @media #{$break-narrow}, #{$break-normal-narrow} {
+        color: $clr3;
+        &:before{
+          content:'('
+        }
+        &:after{
+          content: ')'
+        }
+      }
+    }
+  }
+
+  .plot {
+    @media #{$break-normal}, #{$break-wide} {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
+    @media #{$break-narrow}, #{$break-normal-narrow} {
+      order:2;
+      flex-direction: column;
+      color: $clr3;
+    }
+  }
+
+  .date{
+    @media #{$break-narrow}, #{$break-normal-narrow} {
+      order: 3;
+      color: $clr3;
+    }
+  }
+  .btn{
+    @media #{$break-narrow}, #{$break-normal-narrow} {
+      display: none;
+    }
+  }
+}

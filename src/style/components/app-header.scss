@@ -1,0 +1,29 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1B1A20;
+    padding: 1em;
+
+    .logo{
+        line-height: 1.5em;
+        font-size: 2em;
+        color: $clr4;
+    }
+
+    #navMenuBtn{
+        display: none;
+    }
+
+    #navMenuBtn:checked ~ .nav{
+        display: block;
+    }
+
+    .menu-btn{
+        &-icon{
+            height: 2em;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+}

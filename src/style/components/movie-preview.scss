@@ -1,0 +1,31 @@
+.movie-preview {
+  margin: 10px;
+  width: 300px;
+  cursor: pointer;
+
+  .movie-image-container {
+    position: relative;
+
+    .rating-container {
+      position: absolute;
+      bottom: 1.5em;
+      left: 0.75em;
+      .movie-rating {
+        float: right;
+      }
+      .star-icon {
+        height: 1.1em;
+        float: left;
+        margin-right: 0.2em;
+      }
+    }
+  }
+
+  .movie-image {
+    margin-bottom: 0.3em;
+  }
+  .movie-title {
+    font-size: 1em;
+    margin-left: 0.2em;
+  }
+}

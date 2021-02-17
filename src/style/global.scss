@@ -1,0 +1,27 @@
+// SETUP
+
+@import 'setup/reset.local';
+@import 'setup/_normalize.css';
+@import 'setup/typography';
+@import 'setup/variables';
+
+
+
+
+// VIEWS
+@import 'views/Movie-Page';
+
+
+// COMPONENTS
+@import 'components/app-header';
+@import 'components/navbar';
+@import 'components/movie-list';
+@import 'components/movie-preview';
+@import 'components/movie-overview';
+@import 'components/movie-detail';
+@import 'components/movie-cast';
+@import 'components/secondary-menu';
+
+*{
+    color: #fff;
+}

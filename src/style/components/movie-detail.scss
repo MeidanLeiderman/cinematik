@@ -1,0 +1,28 @@
+.details {
+order: 2;
+
+  @media #{$break-normal}, #{$break-wide} {
+    width: 50%;
+    margin-top: 2.5rem;;
+}
+  .category {
+    display: flex;
+    margin-bottom: 1rem;
+
+    .label{
+        min-width: 130px;
+    }
+
+    .list-container{
+        .list-item {
+            display: inline-block;
+            white-space: pre-wrap;
+            &:not(:last-of-type) {
+              &:after {
+                content: ", ";
+              }
+            }
+        }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@media #{$break-normal}, #{$break-wide} {
+}
+@media #{$break-narrow}, #{$break-normal-narrow} {
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  // overflow-x: hidden;
+
+  @media #{$break-normal}, #{$break-wide} {
+    margin: 2em 5em;
+  }
+
+  &-image-mobile{
+    width: 100%;
+    background-size: cover;
+    background-position: center top;
+
+    @media #{$break-normal}, #{$break-wide} {
+      display: block;
+      height: 400px;
+    }
+    @media #{$break-narrow}, #{$break-normal-narrow} {
+      display: block;
+      height: 200px;
+    }
+  }
+
+  .main-section {
+    padding: 1em;
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+
+    @media #{$break-normal}, #{$break-wide} {
+      position: absolute;
+      height: 400px;
+    }
+  }
+
+  &-similar-movies {
+    display: flex;
+    overflow: auto;
+  }
+  
+
+  .mobile-menu {
+    @media #{$break-normal}, #{$break-wide} {
+      display: none;
+    }
+    @media #{$break-narrow}, #{$break-normal-narrow} {
+      display: block;
+      margin: 0 auto;
+    }
+    ul {
+      display: flex;
+      li {
+        font-size: 1.2em;
+        padding: 1em;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .hide {
+    @media #{$break-narrow}, #{$break-normal-narrow} {
+      display: none;
+    }
+  }
+}
