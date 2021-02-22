@@ -8,7 +8,6 @@
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
   position: relative;
-  // overflow-x: hidden;
 
   @media #{$break-normal}, #{$break-wide} {
     margin: 2em 5em;
@@ -46,7 +45,21 @@
 
   &-similar-movies {
     display: flex;
-    overflow: auto;
+    @media #{$break-normal}, #{$break-wide} {
+      flex-flow: row wrap;
+      // justify-content: center;
+    }
+
+    // .movie-container{
+    //   @media #{$break-wide} {
+    //     max-width: 33%;
+    //   }
+
+    //   @media #{$break-normal}{
+    //     max-width: 30%;
+    //   }
+    // }
+
   }
   
 

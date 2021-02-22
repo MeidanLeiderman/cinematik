@@ -47,7 +47,6 @@
     width: 100%;
     @media #{$break-normal}, #{$break-wide} {
       align-items: baseline;
-      // justify-content: center;
     }
     @media #{$break-narrow}, #{$break-normal-narrow} {
       align-items: baseline;
@@ -84,7 +83,7 @@
     @media #{$break-normal}, #{$break-wide} {
         overflow: hidden;
         display: -webkit-box;
-        -webkit-line-clamp: 4;
+        -webkit-line-clamp: 6;
         -webkit-box-orient: vertical;
     }
     @media #{$break-narrow}, #{$break-normal-narrow} {
@@ -101,6 +100,7 @@
     }
   }
   .btn{
+    text-decoration: underline;
     @media #{$break-narrow}, #{$break-normal-narrow} {
       display: none;
     }

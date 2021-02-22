@@ -9,12 +9,21 @@
         </div>
             <h5 class="date">Released: {{date}}</h5>
         <p class="plot" ref="plot">{{movie.overview}}</p>
-        <button class="btn" v-if="isLonger" @click="check">more</button>
+        <button class="btn" v-if="isLonger" @click="toggleModal">See Full Storyline</button>
     </div>
+    <modal v-if="isModal" @close-modal="toggleModal">
+        <template #title>
+                <h3 class="title">{{movie.title}}</h3>
+            </template>
+
+            <template #content>
+                <p class="">{{movie.overview}}</p>
+            </template>
+    </modal>
 </template>
 
 <script>
-
+import Modal from '@/components/modal.vue'
 export default {
     props:{
         movie:{
@@ -22,9 +31,14 @@ export default {
             required: true
         }
     },
+    components: {
+        Modal
+    },
+    emits:['open-modal'],
     data(){
         return{
-            isMounted: false
+            isMounted: false,
+            isModal: false
         }
     },
     computed:{
@@ -42,6 +56,11 @@ export default {
             if (el.scrollHeight > el.clientHeight) return true
             else return false
         },
+    },
+    methods:{
+        toggleModal(){
+            this.isModal = !this.isModal
+        }
     },
     mounted(){
             this.isMounted = true

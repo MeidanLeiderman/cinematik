@@ -5,15 +5,18 @@ export default createStore({
   state: {
     moviesToShow: [],
     selectedMovie: null,
+    movieStatistics: null,
     apiStatus: {
       inProgress: false,
       success: false,
       error: false
-    }
+    },
+    page: 0
   },
   mutations: {
     setMovies(state, movies) {
-      state.moviesToShow = movies
+      const newMovies = state.moviesToShow.concat(movies)
+      state.moviesToShow = newMovies
     },
     setSelectedMovie(state, movie) {
       state.selectedMovie = movie
@@ -32,13 +35,25 @@ export default createStore({
       state.apiStatus.inProgress = true
       state.apiStatus.success = false
       state.apiStatus.error = false
+    },
+    setMovieStats(state, movieStats) {
+      state.movieStatistics = movieStats
+    },
+    increasePageCount(state){
+      state.page++
     }
   },
   actions: {
-    async getPopularMovies({ commit }) {
-      // commit('HANDLE_API_IN_PROGRESS')
-      const movies = await movieService.getPopularMovies()
-      commit('setMovies', movies)
+    async getMovieStatistics({commit}){
+      const movieStatistics = await movieService.getLatestMovies()
+      commit('setMovieStats', movieStatistics)
+    },
+    async getPopularMovies(context) {
+      context.commit('HANDLE_API_IN_PROGRESS')
+      context.commit('increasePageCount')
+      const currentPage = context.state.page
+      const movies = await movieService.getPopularMovies(currentPage)
+      context.commit('setMovies', movies)
     },
     async getSelectedMovie({ commit }, id) {
       // api request in progress
@@ -59,6 +74,6 @@ export default createStore({
   getters: {
     getMovies: state => {
       return state.moviesToShow
-    }
+    },
   }
 });

@@ -1,25 +1,32 @@
 <template>
   <div class="home">
-    <h2>Most Popular</h2>
+    <h2>Popular Right Now</h2>
     <movie-list :movies="movies" />
-    <button>Show More</button>
+    <button class="btn" @click="loadMovies">Show More</button>
+    <chart :moviesData="movieStats" v-if="movieStats"/>
   </div>
 </template>
 
 <script>
 import MovieList from '@/components/movie-list.vue'
+import Chart from '@/components/chart.vue'
+import {mapState} from 'vuex'
 export default {
   name: "Home",
   components: {
     MovieList,
+    Chart
   },
   computed: {
-    movies() {
-      return this.$store.getters["getMovies"];
-    },
+    ...mapState({
+      movies: state => state.moviesToShow,
+      movieStats: state => state.movieStatistics
+    }),
   },
-  created() {
-    this.$store.dispatch("getPopularMovies");
+  methods:{
+    loadMovies(){
+      this.$store.dispatch('getPopularMovies');
+    }
   },
 };
 </script>

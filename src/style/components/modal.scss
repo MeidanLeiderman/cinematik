@@ -1,0 +1,39 @@
+.modal {
+  background: $clr3;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  max-width: 95%;
+  max-height: 100%;
+  padding: 1rem;
+  z-index: 1;
+
+  @media #{$break-normal}, #{$break-wide} {
+    height: 500px;
+  }
+  @media #{$break-narrow}, #{$break-normal-narrow} {
+    width: 100%;
+    min-height: 70vh;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    align-items: baseline;
+    .close-btn {
+      color: $clr1;
+      height: 30px;
+      align-self: flex-start;
+    }
+    .title {
+      color: $clr1;
+      font-size: 1.5rem;
+    }
+  }
+   .content-wrapper{
+     width: 500px;
+   }
+}

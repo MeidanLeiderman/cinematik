@@ -9,6 +9,7 @@
 
 
 // VIEWS
+@import 'views/Home';
 @import 'views/Movie-Page';
 
 
@@ -21,6 +22,10 @@
 @import 'components/movie-detail';
 @import 'components/movie-cast';
 @import 'components/secondary-menu';
+@import 'components/loading-data';
+@import 'components/error-loading';
+@import 'components/modal';
+@import 'components/chart';
 
 *{
     color: #fff;

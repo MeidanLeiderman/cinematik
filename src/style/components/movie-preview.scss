@@ -23,9 +23,22 @@
 
   .movie-image {
     margin-bottom: 0.3em;
+    background: $clr3;
+    display: block;
+    min-width: 300px;
+    min-height: 168px;
   }
-  .movie-title {
-    font-size: 1em;
-    margin-left: 0.2em;
+
+  .movie-details{
+    display: flex;
+    justify-content: space-between;
+
+    .movie-title {
+      margin-left: 0.5rem;
+      max-width: 70%;
+    }
+    .movie-date{
+      margin-right: 0.5rem;
+    }
   }
 }

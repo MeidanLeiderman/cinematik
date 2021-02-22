@@ -2,13 +2,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #1B1A20;
-    padding: 1em;
+    background: $clr1;
+    height: $header-height;
+    @media #{$break-normal}, #{$break-wide} {
+        margin: 0 2rem;
+    }
+    @media #{$break-normal-narrow}, #{$break-narrow} {
+        margin: 0 1rem;
+    }
 
     .logo{
         line-height: 1.5em;
         font-size: 2em;
         color: $clr4;
+        cursor: pointer;
     }
 
     #navMenuBtn{
@@ -20,9 +27,11 @@
     }
 
     .menu-btn{
+        @media #{$break-normal}, #{$break-wide} {
+            display: none;
+        }
         &-icon{
             height: 2em;
-            color: #fff;
             cursor: pointer;
         }
     }

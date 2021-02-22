@@ -1,0 +1,16 @@
+.error-screen{
+    // display: flex;
+    height: 100vh;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 2em;
+
+    .message{
+        margin-bottom: 2em;
+    }
+
+    .action{
+        color: $clr4;
+        text-align: center;
+    }
+}

@@ -1,16 +1,19 @@
 <template>
-  <app-header/>
+  <app-header />
   <router-view />
 </template>
 
 <script>
-import AppHeader from '@/components/app-header.vue'
+import AppHeader from "@/components/app-header.vue";
 export default {
-  components:{
-    AppHeader
+  components: {
+    AppHeader,
+  },
+  created(){
+    // Initial API popular movie request
+    this.$store.dispatch('getPopularMovies', this.page);
   }
-  
-}
+};
 </script>
 
 <style lang="scss">
@@ -19,7 +22,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
-  background-color: #1B1A20;
+  background-color: #1b1a20;
 }
-
 </style>

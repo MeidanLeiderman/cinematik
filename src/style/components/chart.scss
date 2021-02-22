@@ -1,0 +1,14 @@
+.chart{
+    background: $clr1;
+}
+
+.canvas{
+    height: auto;
+    @media #{$break-normal}, #{$break-wide} {
+        max-width: 60%;
+    }
+    
+    @media #{$break-narrow}, #{$break-normal-narrow} {
+        max-width: 100%;
+    }
+  }

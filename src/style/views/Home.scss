@@ -1,0 +1,16 @@
+.home{    
+    @media #{$break-normal}, #{$break-wide} {
+        margin: 0 2rem;
+    }
+    @media #{$break-normal-narrow}, #{$break-narrow} {
+        margin: 0 1rem;
+    }
+
+    .btn{
+        background: $clr4;
+        padding: 0.75rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+}
