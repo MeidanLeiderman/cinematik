@@ -12,6 +12,7 @@ export default {
   created(){
     // Initial API popular movie request
     this.$store.dispatch('getPopularMovies', this.page);
+    this.$store.dispatch('getMovieStatistics')
   }
 };
 </script>

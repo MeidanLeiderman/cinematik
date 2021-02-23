@@ -13,7 +13,7 @@
     margin: 2em 5em;
   }
 
-  &-image-mobile{
+  &-image-mobile {
     width: 100%;
     background-size: cover;
     background-position: center top;
@@ -43,25 +43,18 @@
     }
   }
 
+  .similar-movies-title{
+    margin-top: 1rem;
+  }
+
   &-similar-movies {
-    display: flex;
+    margin-top: 1rem;
+
     @media #{$break-normal}, #{$break-wide} {
       flex-flow: row wrap;
-      // justify-content: center;
+      min-height: 420px;
     }
-
-    // .movie-container{
-    //   @media #{$break-wide} {
-    //     max-width: 33%;
-    //   }
-
-    //   @media #{$break-normal}{
-    //     max-width: 30%;
-    //   }
-    // }
-
   }
-  
 
   .mobile-menu {
     @media #{$break-normal}, #{$break-wide} {

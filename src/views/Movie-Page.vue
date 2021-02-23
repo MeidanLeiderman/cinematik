@@ -11,10 +11,10 @@
             <secondary-menu @selected-section="sectionToShow"/>
         </div>
         
-            <h3>You might a lso like:</h3>
-        <div class="movie-similar-movies">
-            <div class="movie-container" v-for="similarMovie in movie.similarMovies" :key="similarMovie.id">
-                <movie-preview :movie="similarMovie"/>
+        <div v-if="movie.similarMovies">
+            <h3 class="similar-movies-title">You might also like:</h3>
+            <div class="movie-similar-movies">
+                <similar-movies :movies="movie.similarMovies"/>
             </div>
         </div>
     </div>
@@ -26,11 +26,11 @@
 import {mapState} from 'vuex'
 import LoadingData from '@/components/loading-data.vue'
 import ErrorLoading from '@/components/error-loading.vue'
-import MoviePreview from '@/components/movie-preview.vue'
 import SecondaryMenu from '@/components/secondary-menu.vue'
 import MovieOverview from '@/components/movie-overview.vue'
 import MovieDetails from '@/components/movie-details.vue'
 import MovieCast from '@/components/movie-cast.vue'
+import SimilarMovies from '@/components/similar-movies.vue'
 export default {
     data(){
         return {
@@ -42,11 +42,11 @@ export default {
     components: {
         LoadingData,
         ErrorLoading,
-        MoviePreview,
         SecondaryMenu,
         MovieOverview,
         MovieDetails,
         MovieCast,
+        SimilarMovies,
     },
     computed:{
         ...mapState({

@@ -30,7 +30,6 @@ export default {
     movieYear(){
       let dateObj = new Date(this.movie.release_date)
       return dateObj.getFullYear()
-
     }
   },
   methods:{

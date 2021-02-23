@@ -27,7 +27,7 @@ export default {
         const dateObj = new Date(entry.date)
             const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
             let month = dateObj.getMonth()
-            let day = dateObj.getDate()+1
+            let day = dateObj.getDate()
             return `${months[month]} ${day}`
       });
     },
@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     createChart() {
-      var chart = new Chart(this.$refs.ctx, {
+      let chart = new Chart(this.$refs.ctx, {
         type: "line",
         data: {
           labels: this.labels,
@@ -75,7 +75,6 @@ export default {
                   beginAtZero: true,
                   autoSkip: true,
                   padding: 6
-
                 },
               },
             ],
@@ -94,9 +93,6 @@ export default {
             ]
           },
           layout: {
-            padding: {
-              left: 20
-            },
           },
           title: {
             display: true,
